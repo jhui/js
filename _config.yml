@@ -1,0 +1,34 @@
+---
+name: JavaScript
+description: Technical notes on JavaScript
+url: https://jhui.github.io
+baseurl: /js
+permalink: /blog/:year/:month/:day/:title.html
+paginate_path: /blog/page:num/
+paginate: 5
+timezone: America/Los_Angeles
+highlighter: pygments
+defaults:
+- scope:
+    path: docs
+    type: pages
+  values:
+    layout: docs
+    sectionid: docs
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- Rakefile
+- vendor/bundle
+markdown: redcarpet
+redcarpet:
+  extensions:
+  - fenced_code_blocks
+  - footnotes
+sass:
+  style: :compressed
+  sass_dir: _css
+gems:
+- jekyll-redirect-from
+- jekyll-paginate

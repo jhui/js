@@ -1,0 +1,53 @@
+{% if page.excerpt %}
+{% assign type = 'article' %}
+{% assign sectionTitle = '{{ site.name }} Blog' %}
+{% assign description = page.excerpt | strip_html %}
+{% else %}
+{% assign type = 'website' %}
+{% assign sectionTitle = '{{ site.name }}' %}
+{% assign description = {{ site.description }} %}
+{% endif %}
+{% if page.id == 'home' %}
+  {% assign title = sectionTitle | append: ' - ' | append: page.title %}
+{% else %}
+  {% assign title = page.title | append: ' - ' | append: sectionTitle %}
+{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="{{site.baseurl}}/favicon.ico">
+  <link rel="stylesheet" href="{{site.baseurl}}/css/syntax.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/css/codemirror.css">
+  <link rel="stylesheet" href="{{site.baseurl}}/css/react.css">
+
+  <script src="//use.typekit.net/vqa1hcx.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <script src="https://unpkg.com/codemirror@5.15.2"></script>
+  <script src="https://unpkg.com/codemirror@5.15.2/mode/javascript/javascript.js"></script>
+  <script src="https://unpkg.com/codemirror@5.15.2/mode/xml/xml.js"></script>
+  <script src="https://unpkg.com/codemirror@5.15.2/mode/jsx/jsx.js"></script>
+  <script src="https://unpkg.com/react/dist/react.min.js"></script>
+  <script src="https://unpkg.com/react-dom/dist/react-dom.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <script src="{{site.baseurl}}/js/live_editor.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    {% include navigation.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+  </div>
+
+  <script src="{{site.baseurl}}/js/anchor-links.js"></script>
+</body>
+</html>

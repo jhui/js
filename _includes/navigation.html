@@ -1,0 +1,17 @@
+<div class="nav-main">
+  <div class="wrap">
+    <a class="nav-home" href="{{site.baseurl}}/">
+      <img class="nav-logo" src="{{site.baseurl}}/img/logo.png" width="36" height="36">
+      {{site.name}}
+    </a>
+    <div class="nav-lists">
+      <ul class="nav-site nav-site-internal">
+        <li><a href="{{site.baseurl}}/docs/introduction.html"{% if page.sectionid == 'docs' %} class="active"{% endif %}>Notes</a></li>
+	</li>
+      </ul>
+      <ul class="nav-site nav-site-external">
+        <li><a href="https://github.com/jhui">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
