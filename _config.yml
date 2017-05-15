@@ -32,3 +32,4 @@ sass:
 gems:
 - jekyll-redirect-from
 - jekyll-paginate
+- sidebar_item.rb
