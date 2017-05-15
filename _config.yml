@@ -21,11 +21,15 @@ exclude:
 - README.md
 - Rakefile
 - vendor/bundle
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions:
   - fenced_code_blocks
   - footnotes
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 sass:
   style: :compressed
   sass_dir: _css
