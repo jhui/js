@@ -9,13 +9,6 @@ prev: introduction
 
 > Except primitive data type like number or boolean, all data including functions in JavaScript are objects.
 
-All variables below are objects:
-```javascript
-var o = new Object(),
-    str = 'myString',
-    v = Math.random();
-```
-
 JavaScript defines an object as a collection of properties each containing a value or a function. In short, an object contains name-value pairs. JavaScript provides an _Object()_ constructor function to create an object. As a dynamic language, JavaScript can add properties to an object in runtime. Here we add 2 property values and 1 functions.
 ```javascript
 var o = new Object();
@@ -354,6 +347,22 @@ console.log(l);
 //         hi: (...)
 //         get hi: function hi()
 //         __proto__
+```
+
+#### Literal object
+
+Overwrite the prototype of a literal object:
+```javascript
+function Lesson(name) {
+    this.name = name;
+}
+
+var v = 22;
+var obj = {
+    // __proto__
+    __proto__: Lesson.prototype
+};
+
 ```
 
 ### Object hierarchy
