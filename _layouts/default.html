@@ -1,11 +1,11 @@
 {% if page.excerpt %}
 {% assign type = 'article' %}
-{% assign sectionTitle = '{{ site.name }} Blog' %}
+{% assign sectionTitle = site.name | append: ' Blog' %}
 {% assign description = page.excerpt | strip_html %}
 {% else %}
 {% assign type = 'website' %}
-{% assign sectionTitle = '{{ site.name }}' %}
-{% assign description = {{ site.description }} %}
+{% assign sectionTitle = site.name %}
+{% assign description = site.description %}
 {% endif %}
 {% if page.id == 'home' %}
   {% assign title = sectionTitle | append: ' - ' | append: page.title %}

@@ -1,24 +1,10 @@
 <div class="nav-docs">
-  <!-- Docs Nav -->
-  {% for section in site.data.nav_docs %}
-    <div class="nav-docs-section">
-      <h3>{{ section.title }}</h3>
-      <ul>
-        {% for item in section.items %}
-          <li>
-            {{ item | docs_sidebar_link}}
-            {% if item.subitems %}
-              <ul>
-                {% for subitem in item.subitems %}
-                  <li>
-                    {{ subitem | docs_sidebar_link }}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endfor %}
+<!-- Docs Nav -->
+  <div class="nav-docs-section">
+    <h3>Tutorial</h3>
+    <ul>        
+      <li><a href="/js/docs/introduction.html" {% if page.id=='introduction' %} class="active"{% endif %}>Introduction</a></li>
+      <li><a href="/js/docs/objects.html" {% if page.id=='objects' %} class="active"{% endif %}>Objects &amp; prototypes</a></li>
+    </ul>
+  </div>				  
 </div>
